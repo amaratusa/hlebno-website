@@ -1,0 +1,8 @@
+{
+  "name": "hlebno-prototype",
+  "private": true,
+  "version": "0.2.0",
+  "scripts": {
+    "test": "node tests/cart.test.cjs && node tests/purchase-feedback.test.cjs && node tests/product-controls.test.cjs"
+  }
+}

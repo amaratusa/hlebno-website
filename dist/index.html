@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3eb">
+  <meta name="description" content="ХЛЕБНО готовится к открытию в Петербурге. Хлеб на закваске, фокачча, кофе и гастрономия. Посмотрите зимнюю подборку и хиты пекарни.">
+  <title>ХЛЕБНО — хлеб, кофе и гастрономия в Петербурге</title>
+  <link rel="stylesheet" href="front-fonts.css">
+  <link rel="stylesheet" href="front.css">
+  <link rel="stylesheet" href="mini-cart.css">
+  <script src="ui-icons.js" defer></script>
+  <script src="shop-data.js" defer></script>
+  <script src="shop.js" defer></script>
+  <script src="catalog-data.js" defer></script>
+  <script src="mini-cart.js" defer></script>
+  <script src="account-session.js" defer></script>
+  <script src="front.js" defer></script>
+</head>
+<body id="home" class="home-editorial">
+<a class="skip" href="#main">К содержанию</a>
+<header class="mast">
+  <a href="#home" class="wordmark" aria-label="ХЛЕБНО, на главную">ХЛЕБНО</a>
+  <nav aria-label="Основная навигация" id="navigation">
+    <a href="catalog.html">Продукты</a><a href="seasonal.html">Сезонное</a><a href="recipes.html">Рецепты</a><a href="lab.html">ХЛЕБНО LAB</a><a href="about.html">О нас</a>
+  </nav>
+  <div class="tools">
+    <a href="stores.html" class="catalog-store"><span data-icon="pin"></span> Найти магазин</a>
+    <button data-browse="Все" data-search aria-label="Поиск по ассортименту"><picture><source media="(max-width: 700px)" srcset="assets/front/search-sm.svg"><img src="assets/front/search.svg" alt=""></picture></button>
+    <a class="profile icon-link" href="login.html" aria-label="Личный кабинет"><img src="assets/front/profile.svg" alt=""></a>
+    <button class="cart-open" data-cart aria-label="Открыть корзину"><picture><source media="(max-width: 700px)" srcset="assets/front/bag-sm.svg"><img src="assets/front/bag.svg" alt=""></picture><span class="count">0</span></button>
+    <button id="menu-toggle" aria-controls="mobile-menu" aria-haspopup="dialog" aria-expanded="false" aria-label="Открыть меню"><img src="assets/front/menu.svg" alt=""></button>
+  </div>
+</header>
+<dialog id="mobile-menu" class="mobile-menu" aria-label="Главное меню">
+  <div class="mobile-menu-header">
+    <a class="wordmark" href="#home">ХЛЕБНО</a>
+    <button type="button" class="close" aria-label="Закрыть меню" data-icon="close" autofocus></button>
+  </div>
+  <div class="mobile-menu-body">
+    <nav class="mobile-menu-links" aria-label="Основная навигация">
+      <a href="catalog.html">Продукты <span data-icon="arrowRight"></span></a>
+      <a href="seasonal.html">Сезонное <span data-icon="arrowRight"></span></a>
+      <a href="recipes.html">Рецепты <span data-icon="arrowRight"></span></a>
+      <a href="lab.html">Хлебно LAB <span data-icon="arrowRight"></span></a>
+      <a href="about.html">О нас <span data-icon="arrowRight"></span></a>
+      <a class="mobile-menu-shortcut" href="login.html" data-account-menu>
+        <span data-icon="user"></span> <span data-account-label>Личный кабинет</span> <span data-icon="arrowRight"></span>
+      </a>
+      <a class="mobile-menu-shortcut" href="favorites.html">
+        <span data-icon="heart"></span> Избранное <span data-icon="arrowRight"></span>
+      </a>
+    </nav>
+    <a class="pill mobile-menu-store" href="stores.html"><span data-icon="pin"></span> Найти магазин</a>
+    <p class="mobile-menu-location">Скоро открытие в Санкт-Петербурге<br>Адрес и часы работы сообщим позже</p>
+    <div class="mobile-menu-art" aria-hidden="true">
+      <span>Вкуснее<br>жить сейчас</span>
+    </div>
+  </div>
+</dialog>
+<main id="main">
+  <section class="hero">
+    <img class="backdrop" src="assets/front/hero.webp" alt="Девушка с кофе и багетом у освещённой витрины зимнего Петербурга" fetchpriority="high">
+    <div class="hero-copy">
+      <p class="tag">Скоро открытие · Санкт-Петербург</p>
+      <h1>ХЛЕБНО</h1><p class="hero-subtitle">Своя гастрономическая<br>культура</p>
+      <p>Хлеб на закваске, фокачча и гастрономия.<span class="desktop-copy"><br>За кофе по пути, за хлебом к ужину.</span></p>
+      <div class="home-hero-actions"><a class="pill orange" href="seasonal.html">Смотреть сезонное</a><a class="pill home-outline" href="catalog.html">Наши продукты</a></div>
+    </div><span class="home-star" aria-hidden="true"></span><span class="home-hand" aria-hidden="true">Вкуснее<br>жить сейчас</span>
+  </section>
+  <div class="panels">
+    <section id="season" class="season-row" aria-label="Зимняя коллекция и выбор пекарни">
+      <article class="tile winter"><img class="backdrop" src="assets/front/winter.webp" alt="" loading="lazy"><div class="copy"><p class="tag">Зимняя коллекция</p><h2>Зимний<br>стол</h2><p>Хлеб на закваске, выдержанный сыр<br class="wide"> и горячий кофе.</p><a class="pill" href="seasonal.html">Смотреть подборку</a></div></article>
+      <article class="tile focus focaccia"><picture><source media="(max-width:700px)" srcset="assets/front/focaccia-sm.webp"><img class="backdrop" src="assets/front/focaccia.webp" loading="lazy" alt=""></picture><div class="copy"><p class="tag">Новинка</p><h2>Фокачча<br>с вялеными<br>томатами</h2><p>Воздушная, ароматная,<br>с характером.</p><div class="purchase"><strong>340 ₽</strong><button class="pill dark" data-add="focaccia" aria-label="В корзину — фокачча с вялеными томатами">В корзину</button></div></div></article>
+      <article class="tile focus pistachio"><picture><source media="(max-width:700px)" srcset="assets/front/pistachio-sm.webp"><img class="backdrop" src="assets/front/pistachio.webp" loading="lazy" alt=""></picture><div class="copy"><p class="tag hit">Хит</p><h2>Фисташковый<br>круассан</h2><p>Больше, чем круассан.<br>Это настроение.</p><div class="purchase"><strong>320 ₽</strong><button class="pill" data-add="pistachio" aria-label="В корзину — фисташковый круассан">В корзину</button></div></div></article>
+    </section>
+  <nav class="categories" aria-label="Категории ассортимента">
+    <a href="catalog.html?category=%D0%A5%D0%BB%D0%B5%D0%B1"><img src="assets/front/bread.webp" alt="">Хлеб</a>
+    <a href="catalog.html?category=%D0%92%D1%8B%D0%BF%D0%B5%D1%87%D0%BA%D0%B0"><img src="assets/front/croissant.webp" alt="">Выпечка</a>
+    <a href="catalog.html?category=%D0%A1%D0%BB%D0%B0%D0%B4%D0%BA%D0%BE%D0%B5"><img src="assets/front/roll.webp" alt="">Сладкое</a>
+    <a href="catalog.html?category=%D0%97%D0%B0%D0%B2%D1%82%D1%80%D0%B0%D0%BA%D0%B8"><img src="assets/front/breakfast.webp" alt="">Завтраки</a>
+    <a href="catalog.html?category=%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%B5%D0%B4%D0%B0"><img src="assets/front/bowl.webp" alt="">Готовая еда</a>
+    <a href="catalog.html?category=%D0%A1%D1%8B%D1%80%D1%8B%20%D0%B8%20%D0%B4%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0%D1%82%D0%B5%D1%81%D1%8B"><img src="assets/front/cheese.webp" alt="">Сыры и деликатесы</a>
+    <a href="catalog.html?category=%D0%9D%D0%B0%D0%BF%D0%B8%D1%82%D0%BA%D0%B8"><img src="assets/front/drink.webp" alt="">Напитки</a>
+    <a href="catalog.html?category=%D0%9F%D0%BE%D0%B4%D0%B0%D1%80%D0%BA%D0%B8"><img src="assets/front/gift.webp" alt="">Подарки</a>
+    <a class="all-categories" href="catalog.html"><span aria-hidden="true">•••</span>Все категории</a>
+  </nav>
+    <div class="middle-row">
+      <section class="hits" id="products" aria-labelledby="hits-title"><div class="hits-intro"><h2 id="hits-title">Хиты ХЛЕБНО</h2><p>Любимые продукты на каждый день.</p><a href="catalog.html">Весь каталог</a></div>
+        <div class="hit-grid">
+          <button data-product="artisan"><img src="assets/front/bread.webp" alt="" loading="lazy"><span>Ремесленный хлеб</span><strong>290 ₽</strong></button>
+          <button data-product="croissant"><img src="assets/front/croissant.webp" alt="" loading="lazy"><span>Круассан классический</span><strong>220 ₽</strong></button>
+          <button data-product="roll"><img src="assets/front/roll.webp" alt="" loading="lazy"><span>Синнабон с корицей</span><strong>320 ₽</strong></button>
+          <button data-product="tart"><img src="assets/front/tart.webp" alt="" loading="lazy"><span>Тарт с сезонными ягодами</span><strong>360 ₽</strong></button>
+        </div>
+      </section>
+      <section class="tile pairs" id="pairs"><img class="backdrop" src="assets/front/pairs.webp" alt="" loading="lazy"><div class="copy"><p class="tag">Идеальные сочетания</p><h2>Гастрономические<br>пары</h2><p>Мы подбираем. Вы наслаждаетесь.</p><a class="pill" href="pairs.html">Смотреть пары →</a></div></section>
+    </div>
+    <div class="last-row">
+      <section class="tile lab" id="lab"><img class="backdrop" src="assets/front/lab.webp" alt="" loading="lazy"><div class="copy"><h2>ХЛЕБНО LAB</h2><p>Экспериментируем со вкусами,<br>поддерживаем локальных производителей<br class="wide"> и создаём новые гастрономические идеи.</p><em>Люди, продукты, идеи</em><a class="pill" href="lab.html">Узнать больше →</a></div></section>
+      <section class="tile letters"><img class="backdrop" src="assets/front/letters.webp" alt="" loading="lazy"><picture class="star"><source media="(max-width:700px)" srcset="assets/front/star-sm.svg"><img src="assets/front/star.svg" alt=""></picture><div class="copy"><p class="tag">ХЛЕБНО впечатления</p><h2>Больше вкуса<br>в вашей жизни</h2><p>Подписывайтесь на новости, сезонные подборки<br class="wide"> и специальные предложения.</p><form id="subscribe"><label class="sr" for="email">Ваш e-mail</label><input id="email" type="email" autocomplete="email" placeholder="Ваш e-mail" required><button class="pill dark">Подписаться →</button></form></div></section>
+    </div>
+  </div>
+</main>
+<aside class="cookie-notice" id="cookie-notice" aria-label="Хранение в браузере" hidden>
+  <div><strong>Файлы cookie и данные сайта</strong><p>Браузер запоминает корзину и избранное на этом устройстве.</p><a href="privacy.html">Подробнее</a></div>
+  <button type="button" class="pill orange" id="cookie-close">Понятно</button>
+</aside>
+<footer id="about" class="site-footer">
+  <div class="footer-main"><a class="wordmark" href="index.html">ХЛЕБНО</a><p>Еда. Люди. Культура.<br>Больше, чем продукты.</p>
+    <nav aria-label="Информация"><a href="stores.html">Магазины</a><a href="delivery.html">Доставка</a><a href="contacts.html">Контакты</a><a href="about.html">О бренде</a></nav>
+    <small>Сделано<br>с любовью к хорошей еде</small></div>
+  <div class="footer-legal"><span>© ХЛЕБНО</span><nav aria-label="Документы"><a href="privacy.html">Политика конфиденциальности</a><a href="terms.html">Условия и оферта</a><a href="returns.html">Доставка и возврат</a></nav></div>
+</footer>
+<dialog id="browse" aria-labelledby="browse-title"><div class="dialog-head"><h2 id="browse-title">Ассортимент</h2><button class="close" aria-label="Закрыть">×</button></div><label for="query">Поиск по названию</label><input type="search" id="query" placeholder="Хлеб, круассан, тарт…"><div id="filters" aria-label="Выбор категории"></div><div id="results" aria-live="polite"></div><a id="all-search-results" class="pill dark" href="search.html">Все результаты</a></dialog>
+<dialog id="cart-dialog" aria-labelledby="cart-title"><div class="dialog-head"><h2 id="cart-title">Корзина</h2><button class="close" aria-label="Закрыть">×</button></div><div id="cart-items"></div><div class="total">Итого <strong id="total"></strong></div><a class="pill orange drawer-cart-link" href="cart.html">Перейти в корзину</a><p class="muted">Предварительные цены. Приём заказов откроется вместе с пекарней.</p></dialog>
+<dialog id="details" aria-labelledby="details-title"><div class="dialog-head"><h2 id="details-title"></h2><button class="close" aria-label="Закрыть">×</button></div><div id="details-body"></div></dialog>
+<div id="toast" role="status"></div>
+</body></html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f7f3eb">
+  <meta name="description" content="Каталог ХЛЕБНО. Хлеб на закваске, свежая выпечка, готовая еда, сыры и подарки.">
+  <title>Каталог продуктов — ХЛЕБНО</title>
+  <link rel="stylesheet" href="front-fonts.css">
+  <link rel="stylesheet" href="front.css">
+  <link rel="stylesheet" href="mini-cart.css">
+  <link rel="stylesheet" href="catalog.css">
+  <script src="ui-icons.js" defer></script>
+  <script src="shop-data.js" defer></script>
+  <script src="shop.js" defer></script>
+  <script src="catalog-data.js" defer></script>
+  <script src="mini-cart.js" defer></script>
+  <script src="account-session.js" defer></script>
+  <script src="front.js" defer></script>
+  <script src="catalog.js" defer></script>
+</head>
+<body id="home" class="catalog-page">
+<a class="skip" href="#main">К содержанию</a>
+<header class="mast">
+  <a href="index.html" class="wordmark" aria-label="ХЛЕБНО, на главную">ХЛЕБНО</a>
+  <nav aria-label="Основная навигация" id="navigation">
+    <a href="catalog.html" aria-current="page">Продукты</a><a href="seasonal.html">Сезонное</a><a href="recipes.html">Рецепты</a><a href="lab.html">ХЛЕБНО LAB</a><a href="about.html">О нас</a>
+  </nav>
+  <div class="tools">
+    <a href="stores.html" class="catalog-store"><span data-icon="pin"></span> Найти магазин</a>
+    <button data-browse="Все" data-search aria-haspopup="dialog" aria-label="Поиск по ассортименту"><picture><source media="(max-width: 700px)" srcset="assets/front/search-sm.svg"><img src="assets/front/search.svg" alt=""></picture></button>
+    <a class="profile icon-link" href="login.html" aria-label="Личный кабинет"><img src="assets/front/profile.svg" alt=""></a>
+    <button class="cart-open" data-cart aria-label="Открыть корзину"><picture><source media="(max-width: 700px)" srcset="assets/front/bag-sm.svg"><img src="assets/front/bag.svg" alt=""></picture><span class="count">0</span></button>
+    <button id="menu-toggle" aria-controls="mobile-menu" aria-haspopup="dialog" aria-expanded="false" aria-label="Открыть меню"><img src="assets/front/menu.svg" alt=""></button>
+  </div>
+</header>
+<dialog id="mobile-menu" class="mobile-menu" aria-label="Главное меню">
+  <div class="mobile-menu-header">
+    <a class="wordmark" href="index.html">ХЛЕБНО</a>
+    <button type="button" class="close" aria-label="Закрыть меню" data-icon="close" autofocus></button>
+  </div>
+  <div class="mobile-menu-body">
+    <nav class="mobile-menu-links" aria-label="Основная навигация">
+      <a href="catalog.html" aria-current="page">Продукты <span data-icon="arrowRight"></span></a>
+      <a href="seasonal.html">Сезонное <span data-icon="arrowRight"></span></a>
+      <a href="recipes.html">Рецепты <span data-icon="arrowRight"></span></a>
+      <a href="lab.html">Хлебно LAB <span data-icon="arrowRight"></span></a>
+      <a href="about.html">О нас <span data-icon="arrowRight"></span></a>
+      <a class="mobile-menu-shortcut" href="login.html" data-account-menu>
+        <span data-icon="user"></span> <span data-account-label>Личный кабинет</span> <span data-icon="arrowRight"></span>
+      </a>
+      <a class="mobile-menu-shortcut" href="favorites.html">
+        <span data-icon="heart"></span> Избранное <span data-icon="arrowRight"></span>
+      </a>
+    </nav>
+    <a class="pill mobile-menu-store" href="stores.html"><span data-icon="pin"></span> Найти магазин</a>
+    <p class="mobile-menu-location">Скоро открытие в Санкт-Петербурге<br>Адрес и часы работы сообщим позже</p>
+    <div class="mobile-menu-art" aria-hidden="true">
+      <span>Вкуснее<br>жить сейчас</span>
+    </div>
+  </div>
+</dialog>
+<main id="main" class="catalog-wrap">
+  <section class="catalog-hero" aria-labelledby="catalog-title">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span aria-hidden="true">/</span><span>Продукты</span></nav>
+    <h1 id="catalog-title">Каталог</h1>
+    <p>Свежая выпечка, готовая еда,<br>сыры и подарки.</p>
+    <span class="catalog-star" aria-hidden="true"></span>
+    <span class="catalog-annotation" aria-hidden="true">Свежее<br>каждое утро <i>↗</i></span>
+    <img class="catalog-hero-bread" src="assets/front/bread.webp" alt="" fetchpriority="high">
+    <img class="catalog-hero-croissant" src="assets/front/croissant.webp" alt="" fetchpriority="high">
+  </section>
+  <nav id="catalog-categories" aria-label="Категории продуктов"></nav>
+  <div class="catalog-layout">
+    <dialog id="filter-sheet" aria-labelledby="sheet-title"><div class="filter-sheet-head"><span id="sheet-title">Фильтры</span><button class="close" type="button" aria-label="Закрыть фильтры" data-icon="close"></button></div><div id="mobile-filter-slot"></div><form method="dialog"><button class="pill dark filter-done">Показать товары</button></form></dialog>
+    <aside class="catalog-sidebar">
+      <div id="desktop-filter-slot">
+        <div id="catalog-filters">
+          <div class="filter-title-row"><h2 id="filter-title">Фильтры</h2><button id="filter-reset" type="reset" form="filter-form">Сбросить</button></div>
+          <form id="filter-form" class="filter-panel">
+            <div class="filter-shop"><strong>Магазин</strong><p><span data-icon="pin"></span> Санкт-Петербург · скоро открытие</p></div>
+            <fieldset><legend>Наличие</legend>
+              <label><input type="checkbox" name="status" value="in-stock"> В наличии сегодня <small data-facet="in-stock"></small></label>
+              <label><input type="checkbox" name="status" value="preorder"> Под заказ на завтра <small data-facet="preorder"></small></label>
+              <label><input type="checkbox" name="status" value="unavailable"> Нет в наличии <small data-facet="unavailable"></small></label>
+            </fieldset>
+            <fieldset><legend>Особенности</legend>
+              <label><input type="checkbox" name="starter"> На закваске <small data-facet="starter"></small></label>
+              <label><input type="checkbox" name="seasonal"> Сезонное <small data-facet="seasonal"></small></label>
+            </fieldset>
+            <fieldset><legend>Цена, ₽</legend>
+              <div class="price-inputs">
+                <label><span class="sr">Цена от</span><input type="number" name="min" min="0" placeholder="От"></label>
+                <label><span class="sr">Цена до</span><input type="number" name="max" min="0" placeholder="До"></label>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <section class="winter catalog-winter"><img class="backdrop" src="assets/front/winter.webp" alt="" loading="lazy"><p class="tag">Зимняя коллекция</p><h2>Зимний<br>стол</h2><a href="seasonal.html" class="pill">Смотреть →</a></section>
+    </aside>
+    <section class="catalog-results" aria-label="Товары">
+      <div class="catalog-toolbar">
+        <button id="filter-open" class="pill dark" type="button" aria-controls="filter-sheet" aria-haspopup="dialog"><span class="filter-mark" aria-hidden="true">☰</span> Фильтры <span id="filter-count" hidden></span></button>
+        <p class="catalog-count" aria-live="polite"><strong id="result-count"></strong><span> · Санкт-Петербург</span></p>
+        <div id="sort-buttons" aria-label="Сортировка"></div>
+        <label class="sort-select"><span class="sr">Сортировка</span><select id="catalog-sort"><option value="popular">Популярные</option><option value="price-up">Цена ↑</option><option value="price-down">Цена ↓</option><option value="new">Новинки</option></select></label>
+      </div>
+      <div id="filter-chips" class="filter-chips"></div>
+      <div id="catalog-preview-state" hidden></div>
+      <div id="catalog-grid"></div>
+      <div id="catalog-empty" hidden><h2>Товары не найдены</h2><p>Измените категорию или сбросьте фильтры.</p><button type="button" id="catalog-clear" class="pill">Сбросить выбор</button></div>
+      <div class="catalog-more"><button id="load-more" type="button">Показать ещё <span aria-hidden="true">⌄</span></button><nav id="catalog-pages" aria-label="Страницы каталога"></nav><p id="shown-count"></p></div>
+      <p class="catalog-note">Демонстрационная витрина. Цены и наличие для открытия в Петербурге уточняются.</p>
+    </section>
+  </div>
+</main>
+<footer id="about" class="site-footer">
+  <div class="footer-main"><a class="wordmark" href="index.html">ХЛЕБНО</a><p>Еда. Люди. Культура.<br>Больше, чем продукты.</p>
+    <nav aria-label="Информация"><a href="stores.html">Магазины</a><a href="delivery.html">Доставка</a><a href="contacts.html">Контакты</a><a href="about.html">О бренде</a></nav>
+    <small>Сделано<br>с любовью к хорошей еде</small></div>
+  <div class="footer-legal"><span>© ХЛЕБНО</span><nav aria-label="Документы"><a href="privacy.html">Политика конфиденциальности</a><a href="terms.html">Условия и оферта</a><a href="returns.html">Доставка и возврат</a></nav></div>
+</footer>
+<dialog id="browse" aria-labelledby="browse-title"><div class="dialog-head"><h2 id="browse-title">Ассортимент</h2><button class="close" aria-label="Закрыть">×</button></div><label for="query">Поиск по названию</label><input type="search" id="query" placeholder="Хлеб, круассан, тарт…"><div id="filters" aria-label="Выбор категории"></div><div id="results" aria-live="polite"></div><a id="all-search-results" class="pill dark" href="search.html">Все результаты</a></dialog>
+<dialog id="cart-dialog" aria-labelledby="cart-title"><div class="dialog-head"><h2 id="cart-title">Корзина</h2><button class="close" aria-label="Закрыть">×</button></div><div id="cart-items"></div><div class="total">Итого <strong id="total"></strong></div><a class="pill orange drawer-cart-link" href="cart.html">Перейти в корзину</a><p class="muted">Предварительные цены. Приём заказов откроется вместе с пекарней.</p></dialog>
+<dialog id="details" aria-labelledby="details-title"><div class="dialog-head"><h2 id="details-title"></h2><button class="close" aria-label="Закрыть">×</button></div><div id="details-body"></div></dialog>
+<div id="toast" role="status"></div>
+</body></html>
